@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Smart Blind</string>
+
+    <string name="hello_world">in notification</string>
+    <string name="action_settings">Profiles</string>
+    <string name="title_activity_rules">Rules</string>
+    <string name="RulePageHeading">RULES</string>
+    <string name="TempHeading">TEMP</string>
+    <string name="AmbientHeading">AMBIENT</string>
+    <string name="BlindHeading">BLIND</string>
+    <string name="OP">OP</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancel</string>
+    <string-array name="Temp">
+        <item>warm</item>
+        <item>hot</item>
+        <item>cold</item>
+        <item>freezing</item>
+        <item>comfort</item>
+    </string-array>
+    <string-array name="Light">
+        <item>dim</item>
+        <item>dark</item>
+        <item>bright</item>
+    </string-array>
+    <string-array name="Blinds">
+        <item>open</item>
+        <item>half</item>
+        <item>close</item>
+    </string-array>
+    <string-array name="Operations">
+        <item>AND</item>
+        <item>OR</item>
+    </string-array>
+    <string name="title_activity_notification">Notification</string>
+    <string name="title_activity_add_rule">AddRule</string>
+    <string name="title_activity_new">NewActivity</string>
+    <string name="title_activity_recycler_rule">RecyclerRULE</string>
+</resources>

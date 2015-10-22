@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Smart Blind</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="TempHeading">TEMP</string>
+    <string name="AmbientHeading">AMBIENT</string>
+    <string name="BlindHeading">BLIND</string>
+    <string name="OP">OP</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancel</string>
+</resources>

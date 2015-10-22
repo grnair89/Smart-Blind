@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="PervasiveCourse_student">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Applications/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="PervasiveCourse_student.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="libs/jFuzzyLogic.jar"/>
+        <pathelement location="libs/pi4j-core.jar"/>
+        <pathelement location="libs/pi4j-device.jar"/>
+        <pathelement location="libs/pi4j-example.jar"/>
+        <pathelement location="libs/pi4j-gpio-extension.jar"/>
+        <pathelement location="libs/pi4j-service.jar"/>
+        <pathelement location="libs/json-smart-1.2.jar"/>
+        <pathelement location="libs/jsonrpc2-base-1.35-javadoc.jar"/>
+        <pathelement location="libs/jsonrpc2-base-1.35.jar"/>
+        <pathelement location="libs/jsonrpc2-client-1.14.4-javadoc.jar"/>
+        <pathelement location="libs/jsonrpc2-client-1.14.4.jar"/>
+        <pathelement location="libs/jsonrpc2-server-1.10.1-javadoc.jar"/>
+        <pathelement location="libs/jsonrpc2-server-1.10.1.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="JsonRPCServer">
+        <java classname="edu.rit.csci759.jsonrpc.server.JsonRPCServer" failonerror="true" fork="yes">
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </java>
+    </target>
+    <target name="JsonRPCClient">
+        <java classname="edu.rit.csci759.jsonrpc.client.JsonRPCClient" failonerror="true" fork="yes">
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </java>
+    </target>
+    <target name="MyTipperClass">
+        <java classname="edu.rit.csci759.fuzzylogic.MyTipperClass" failonerror="true" fork="yes">
+            <classpath refid="PervasiveCourse_student.classpath"/>
+        </java>
+    </target>
+</project>
